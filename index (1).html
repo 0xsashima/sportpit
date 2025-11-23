@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportPit — Спортивне харчування</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+        nav {
+            background: #000;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            color: #e60000;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #e60000;
+        }
+        header {
+            background: linear-gradient(135deg, #111 0%, #333 100%);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #111;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .product-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .product-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #111;
+        }
+        .product-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .price {
+            font-size: 26px;
+            font-weight: bold;
+            color: #e60000;
+            margin-bottom: 15px;
+        }
+        .btn {
+            background: #e60000;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #cc0000;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .feature-card .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #111;
+        }
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .info-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .info-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        .info-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #111;
+            color: #fff;
+            margin-top: 60px;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #e60000;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            header h1 {
+                font-size: 36px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="index.html" class="logo">SportPit</a>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="#products">Продукти</a></li>
+            <li><a href="#about">Про нас</a></li>
+            <li><a href="#delivery">Доставка</a></li>
+            <li><a href="#contact">Контакти</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <h1>SportPit</h1>
+    <p>Якісне спортивне харчування для досягнення ваших цілей</p>
+</header>
+
+<div class="container">
+    <!-- Переваги -->
+    <div class="features">
+        <div class="feature-card">
+            <div class="icon">✓</div>
+            <h3>100% Оригінал</h3>
+            <p>Працюємо лише з офіційними постачальниками</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🚚</div>
+            <h3>Швидка доставка</h3>
+            <p>Відправка в день замовлення по всій Україні</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💳</div>
+            <h3>Зручна оплата</h3>
+            <p>Карта, накладений платіж, Apple/Google Pay</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💬</div>
+            <h3>Консультація</h3>
+            <p>Безкоштовна консультація від фахівців</p>
+        </div>
+    </div>
+
+    <!-- Продукти -->
+    <h2 class="section-title" id="products">Наші продукти</h2>
+    <div class="products">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1693996045300-521e9d08cabc?q=80&w=2070&auto=format&fit=crop" alt="Протеїн">
+            <h3>Сироватковий протеїн</h3>
+            <p>900 г • 24 г білка на порцію</p>
+            <div class="price">890 грн</div>
+            <a class="btn" href="pr1.html">Детальніше</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1693996045435-af7c48b9cafb?q=80&w=2070&auto=format&fit=crop" alt="Креатин">
+            <h3>Креатин моногідрат</h3>
+            <p>100% чистий креатин • 300 г</p>
+            <div class="price">520 грн</div>
+            <a class="btn" href="pr2.html">Детальніше</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/opn/opn02522/y/40.jpg" alt="BCAA">
+            <h3>BCAA 2:1:1</h3>
+            <p>250 г • Відновлення та захист м'язів</p>
+            <div class="price">610 грн</div>
+            <a class="btn" href="pr3.html">Детальніше</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://static1.biotus.ua/media/optimization/catalog/product/300/p/r/pre-workout_boost_melon_flavor-325g-bio-532405-207_104_2-r-06_-0001_1_jpg.webp" alt="Предтренік">
+            <h3>Предтренувальний комплекс</h3>
+            <p>Якість + Енергія • 220 г</p>
+            <div class="price">750 грн</div>
+            <a class="btn" href="pr4.html">Детальніше</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://belok.ua/image/cache/catalog/foto2025/Sporter/818622-1000x1000.png" alt="Омега-3">
+            <h3>Omega-3</h3>
+            <p>120 капсул • Підтримка серця та мозку</p>
+            <div class="price">430 грн</div>
+            <a class="btn" href="pr5.html">Детальніше</a>
+        </div>
+    </div>
+
+    <!-- Про нас -->
+    <div class="info-section" id="about">
+        <h2>Про нас</h2>
+        <p>
+            SportPit Shop — це команда ентузіастів здорового способу життя, яка вже понад 5 років допомагає спортсменам та людям,
+            що ведуть активний спосіб життя, обирати якісні та безпечні добавки.
+        </p>
+        <p>
+            Ми працюємо лише з перевіреними виробниками та гарантуємо оригінальність кожного продукту. Наша місія — зробити 
+            спортивне харчування доступним та зрозумілим для кожного, хто прагне бути здоровим та сильним.
+        </p>
+        <p>
+            У нас ви знайдете не лише продукти преміум-якості, але й професійні консультації щодо їх застосування. 
+            Ми віримо, що правильне харчування — це основа успіху у спорті та житті!
+        </p>
+    </div>
+
+    <!-- Доставка та оплата -->
+    <div class="info-section" id="delivery">
+        <h2>Доставка і оплата</h2>
+        <h3 style="margin-top: 20px; color: #e60000;">Доставка:</h3>
+        <p>
+            📦 Нова Пошта по всій Україні (1–3 дні)<br>
+            🚚 Відправка в день замовлення до 17:00<br>
+            📍 Безкоштовна доставка при замовленні від 1500 грн
+        </p>
+        
+        <h3 style="margin-top: 25px; color: #e60000;">Оплата:</h3>
+        <p>
+            💳 Оплата на картку Приват24<br>
+            📱 Apple Pay / Google Pay<br>
+            💵 Накладений платіж при отриманні<br>
+            🏦 Безготівковий розрахунок для юридичних осіб
+        </p>
+    </div>
+
+    <!-- Контакти -->
+    <div class="info-section" id="contact">
+        <h2>Контакти</h2>
+        <p>
+            📞 Телефон: <strong>+380 (67) 123-45-67</strong><br>
+            📧 Email: <strong>info@sportpit.shop</strong><br>
+            📱 Telegram: <strong>@sportpit_shop</strong><br>
+            📍 Instagram: <strong>@sportpit.ukraine</strong>
+        </p>
+        <p style="margin-top: 20px;">
+            Працюємо: Пн-Пт 9:00-19:00, Сб 10:00-16:00<br>
+            Консультації та прийом замовлень щодня!
+        </p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 SportPit Shop • Всі права захищені</p>
+    <p style="margin-top: 10px;">
+        <a href="#about">Про компанію</a> • 
+        <a href="#delivery">Доставка</a> • 
+        <a href="#contact">Контакти</a>
+    </p>
+</footer>
+
+</body>
+</html>
